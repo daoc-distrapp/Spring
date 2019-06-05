@@ -10,7 +10,7 @@ public class MiObjeto {
 	
 	public MiObjeto() {
 		dato = new Random().nextInt();
-		System.out.println("Inicializado mi objeto");
+		System.out.println(" Inicializado mi objeto");
 	}
 
 	public int getDato() {
