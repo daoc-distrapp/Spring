@@ -9,6 +9,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/ApplicationRunner.html
+// https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/CommandLineRunner.html
+
 @SpringBootApplication
 public class BasicoTresApplication implements ApplicationRunner {
 
