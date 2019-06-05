@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BasicoDosApplication implements ApplicationRunner {
+public class BasicoTresApplication implements ApplicationRunner {
 
 	@Autowired
 	Date date;
@@ -22,7 +22,7 @@ public class BasicoDosApplication implements ApplicationRunner {
 	MiObjeto obj;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(BasicoDosApplication.class, args);
+		SpringApplication.run(BasicoTresApplication.class, args);
 	}
 
 	@Override
