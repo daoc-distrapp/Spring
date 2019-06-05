@@ -7,6 +7,8 @@ import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.ip.dsl.Udp;
 import org.springframework.integration.stream.CharacterStreamWritingMessageHandler;;
 
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/stream/CharacterStreamWritingMessageHandler.html
+
 @Configuration
 public class UdpReceiveConfig {
 

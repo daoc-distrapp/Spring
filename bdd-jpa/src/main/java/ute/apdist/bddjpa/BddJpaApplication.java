@@ -5,6 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// https://spring.io/guides/gs/accessing-data-jpa/
+// https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
 @SpringBootApplication
 public class BddJpaApplication implements CommandLineRunner {
 

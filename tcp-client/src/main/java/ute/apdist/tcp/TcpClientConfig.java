@@ -9,6 +9,8 @@ import org.springframework.integration.ip.dsl.Tcp;
 import org.springframework.integration.scheduling.PollerMetadata;
 import org.springframework.integration.stream.CharacterStreamReadingMessageSource;
 
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/ip/dsl/Tcp.html
+
 @Configuration
 public class TcpClientConfig {
 

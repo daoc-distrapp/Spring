@@ -9,6 +9,14 @@ import org.springframework.integration.ip.dsl.Udp;
 import org.springframework.integration.scheduling.PollerMetadata;
 import org.springframework.integration.stream.CharacterStreamReadingMessageSource;
 
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/scheduling/PollerMetadata.html
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/annotation/Poller.html
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/dsl/IntegrationFlow.html
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/dsl/IntegrationFlows.html
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/stream/CharacterStreamReadingMessageSource.html
+// https://docs.spring.io/spring-integration/docs/5.1.0.RELEASE/reference/html/ip.html
+// https://docs.spring.io/spring-integration/api/org/springframework/integration/ip/dsl/Udp.html
+
 @Configuration
 public class UdpSendConfig {
 
