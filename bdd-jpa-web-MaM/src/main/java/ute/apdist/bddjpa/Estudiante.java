@@ -8,9 +8,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Estudiante {
@@ -28,7 +27,7 @@ public class Estudiante {
 	private Long id;
 	private String nombre;
 	private String cedula;
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Curso> cursos;
 	
 	public Long getId() {
@@ -57,6 +56,10 @@ public class Estudiante {
 	}
 	@Override
 	public String toString() {
-		return String.format("Estudiante [%d, %s, %s]\n\t%s\n", getId(), getCedula(), getNombre(), getCursos());
+		String estudiante = String.format("Estudiante [%d, %s, %s]\n\t", getId(), getCedula(), getNombre());
+		for(Curso c : getCursos()) {
+			estudiante += "Curso: " + c.getNombre() + " / ";
+		}
+		return estudiante + "\n";
 	}
 }

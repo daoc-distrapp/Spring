@@ -9,7 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BddJpaApplication implements CommandLineRunner {
 
 	@Autowired
-	EstudianteRepository repository;
+	EstudianteRepository repEst;
+	
+	@Autowired
+	CursoRepository repCur;	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(BddJpaApplication.class, args);
@@ -18,13 +21,43 @@ public class BddJpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Estudiante uno = new Estudiante("Uno", "111");
-		uno.getCursos().add(new Curso("Mate", 2015));
-		uno.getCursos().add(new Curso("Mate", 2018));
-		uno.getCursos().add(new Curso("Física", 2019));
-		repository.save(uno);
+		Estudiante diez = new Estudiante("Diez", "1010");
+		Estudiante once = new Estudiante("Once", "1111");
 		
-		System.out.println(repository.findAll());
+		repEst.save(diez);
+		repEst.save(once);
+		
+		Curso a = new Curso("AAA", 2010);
+		Curso b = new Curso("BBB", 2010);
+		Curso c = new Curso("CCC", 2010);
+		Curso d = new Curso("DDD", 2010);		
+		
+		repCur.save(a);
+		repCur.save(b);
+		repCur.save(c);
+		repCur.save(d);
+		
+		diez.getCursos().add(a);
+		diez.getCursos().add(b);
+		once.getCursos().add(c);
+		once.getCursos().add(d);
+				
+		repEst.save(diez);
+		repEst.save(once);
+
+		a.getEstudiantes().add(diez);
+		b.getEstudiantes().add(diez);
+		c.getEstudiantes().add(once);
+		d.getEstudiantes().add(once);
+		
+		repCur.save(a);
+		repCur.save(b);
+		repCur.save(c);
+		repCur.save(d);		
+		
+		System.out.println(repEst.findAll());
+		
+		System.out.println(repCur.findAll());
 		
 	}
 }
