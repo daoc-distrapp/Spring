@@ -17,12 +17,14 @@ public class BddJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		repository.save(new Estudiante("Uno", "111"));
-		repository.save(new Estudiante("Dos", "222"));
-		repository.findAll().forEach(e -> System.out.println(e));
-		System.out.println("---");
-		repository.findByNombreContaining("n").forEach(e -> System.out.println(e));
-		System.out.println("---");
-		repository.findByNombreContaining("D").forEach(e -> System.out.println(e));
-}
+		
+		Estudiante uno = new Estudiante("Uno", "111");
+		uno.getCursos().add(new Curso("Mate", 2015));
+		uno.getCursos().add(new Curso("Mate", 2018));
+		uno.getCursos().add(new Curso("Física", 2019));
+		repository.save(uno);
+		
+		System.out.println(repository.findAll());
+		
+	}
 }
