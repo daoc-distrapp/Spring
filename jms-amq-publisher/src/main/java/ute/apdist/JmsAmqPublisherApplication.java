@@ -26,7 +26,7 @@ public class JmsAmqPublisherApplication implements ApplicationRunner {
 		Scanner kb = new Scanner(System.in);
 		while(kb.hasNextLine()) {
 			String msg = kb.nextLine();
-			jmsTemplate.convertAndSend("MyQueue", msg);
+			jmsTemplate.convertAndSend("MyDestination", msg);
 		}
 		kb.close();
 	}

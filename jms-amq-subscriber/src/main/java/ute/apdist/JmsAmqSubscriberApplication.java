@@ -13,7 +13,7 @@ public class JmsAmqSubscriberApplication {
 		SpringApplication.run(JmsAmqSubscriberApplication.class, args);
 	}
 	
-	@JmsListener(destination = "MyQueue")
+	@JmsListener(destination = "MyDestination")
 	public void receiveMessage(String msg) {
 		System.out.println("Recibido: " + msg);
 	}
