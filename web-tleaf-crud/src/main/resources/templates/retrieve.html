@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Crud Mascotas</title>
+	</head>
+	<body>
+		<h1>Mascotas existentes</h1>
+		<a href="/create">Create</a>
+		<table border="1">
+			<tr>
+				<th>Id</th>
+				<th>Especie</th>
+				<th>Nombre</th>
+			</tr>
+			<tr th:each="mas : ${mascotas}">
+				<td th:text="${mas.id}"></td>
+				<td th:text="${mas.especie}"></td>
+				<td th:text="${mas.nombre}"></td>				
+				<td>
+					<a th:href="@{/update/{id}(id=${mas.id})}">Update</a>
+					<a th:href="@{/delete/{id}(id=${mas.id})}">Delete</a>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

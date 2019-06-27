@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Create Mascota</title>
+	</head>
+	<body>
+		<h1>Create Mascota</h1>
+		
+		<form th:action="@{/doCreateUpdate}" th:object="${mascota}" method="post">
+			<p>Especie: <input type="text" th:field="*{especie}"/></p>
+			<p>Nombre: <input type="text" th:field="*{nombre}"/></p>
+			<p><input type="submit" value="Create"/></p>
+		</form>
+	</body>
+</html>

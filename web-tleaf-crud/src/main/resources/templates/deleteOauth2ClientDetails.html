@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>OAuth2 Delete Client Details</title>
+	</head>
+	<body>
+		<h1>Delete Client</h1>
+		
+		<form th:action="@{/admin/doDelete}" th:object="${cliente}" method="post" onsubmit="return confirm('Do you really want to DELETE the client?');">
+			<p>client_id: <input type="text" readonly="readonly" th:field="*{clientId}"/></p>
+			<p>client_secret: <input type="password" readonly="readonly" th:field="*{clientSecret}"/></p>
+			<p>scope: <input type="text" readonly="readonly" th:field="*{scope}"/></p>
+			<p>authorized_grant_types: <input type="text" readonly="readonly" th:field="*{grantTypes}"/></p>
+			<p>authorities: <input type="text" readonly="readonly" th:field="*{authorities}"/></p>
+			<p>access_token_validity: <input type="text" readonly="readonly" th:field="*{accessTokenValidity}"/></p>
+			<p><input type="submit" value="Delete"/></p>
+		</form>
+	</body>
+</html>

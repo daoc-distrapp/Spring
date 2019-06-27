@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Delete Mascota</title>
+	</head>
+	<body>
+		<h1>Delete Mascota</h1>
+		
+		<form th:action="@{/doDelete}" th:object="${mascota}" method="post">
+			<p>Id: <input type="text" readonly="readonly" th:field="*{id}"/></p>
+			<p>Especie: <input type="text" readonly="readonly" th:field="*{especie}"/></p>
+			<p>Nombre: <input type="text" readonly="readonly" th:field="*{nombre}"/></p>
+			<p><input type="submit" value="Delete"/></p>
+		</form>
+	</body>
+</html>
