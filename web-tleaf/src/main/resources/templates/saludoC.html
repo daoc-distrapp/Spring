@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cargos y roles</title>
+	</head>
+	<body>
+		<h1 th:text="'Cargo: ' + ${cargo}"></h1>
+		
+		<table border="1">
+			<tr>
+				<th>Roles</th>
+			</tr>
+			<tr th:each="rol : ${roles}">
+				<td th:text="${rol}"></td>
+			</tr>
+		</table>
+	</body>
+</html>
