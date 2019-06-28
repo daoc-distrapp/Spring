@@ -17,6 +17,7 @@ public class WebSecurityApplication {
 	 *	 spring.security.user.password: mipwd
 	 * Si se ingresan las credenciales correctamente, se redirecciona a la página inicial: /index.html
 	 * Si se ingresan las credenciales erróneas, se redirecciona a: /login?error
+	 * Para terminar la sesión hay que ir al path: /logout
 	 * @param args
 	 */
 	
