@@ -12,6 +12,9 @@ public class WebSecurityApplication {
 	 * El usuario por defecto es: user
 	 * El password por defecto se genera cada vez que se arranca la aplicación y se ve en la consola. Ej:
 	 *   Using generated security password: dea238a0-559e-4e98-92ac-b7ece3c73df7
+	 * O lo puede ingresar en application.properties:
+	 *   spring.security.user.name: miusr
+	 *	 spring.security.user.password: mipwd
 	 * Si se ingresan las credenciales correctamente, se redirecciona a la página inicial: /index.html
 	 * Si se ingresan las credenciales erróneas, se redirecciona a: /login?error
 	 * @param args
