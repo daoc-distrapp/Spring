@@ -18,6 +18,12 @@ public class WebSecurityApplication {
 	 * Si se ingresan las credenciales correctamente, se redirecciona a la página inicial: /index.html
 	 * Si se ingresan las credenciales erróneas, se redirecciona a: /login?error
 	 * Para terminar la sesión hay que ir al path: /logout
+	 * ---
+	 * Para usar TLS (https) use keytool para generar keystore y clave
+	 * Registre en application.properties:
+	 *   server.ssl.key-store = classpath:sample.jks
+	 *   server.ssl.key-store-password = secret
+	 *   server.ssl.key-password = password
 	 * @param args
 	 */
 	
