@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestXmlJsonApplication {
+public class RestJsonApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestXmlJsonApplication.class, args);
+		SpringApplication.run(RestJsonApplication.class, args);
 	}
 
 }
