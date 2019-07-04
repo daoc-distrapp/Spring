@@ -19,7 +19,6 @@ public class RestControll {
 		return new UnDato(1, "Ana", 10.53);
 	}	
 
-	
 	@RequestMapping("/holaJsonS")
 	public UnDato[] getJsonS() {
 		return new UnDato[]{new UnDato(1, "Ana", 10.53),  new UnDato(2, "Pedro", 5.432)};
@@ -31,6 +30,6 @@ public class RestControll {
 		lista.add(new UnDato(1, "Ana", 10.53));
 		lista.add(new UnDato(2, "Pedro", 5.432));
 		return lista;
-	}		
+	}
 	
 }
