@@ -12,4 +12,9 @@ public class UnDato {
 		this.nombre = nombre;
 		this.valor = valor;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("UnDato [numero: %d; nombre: %s; valor: %f]", this.numero, this.nombre, this.valor);
+	}
 }
