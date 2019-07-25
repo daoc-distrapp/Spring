@@ -8,7 +8,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
@@ -43,6 +45,15 @@ public class RestJsonClientApplication implements ApplicationRunner {
 			,null
 			,new ParameterizedTypeReference<List<UnDato>>(){}).getBody();
 		System.out.println(datoSSS);
+		
+		UnDato datoDel = new UnDato(1, "uno", 0.1);
+		HttpEntity<UnDato> entity = new HttpEntity<>(datoDel);
+		ResponseEntity<String> response = client.exchange(
+				"http://localhost:8080/delete"
+				,HttpMethod.DELETE
+				,entity
+				,String.class);
+		System.out.println(response);
 	}
 
 }
