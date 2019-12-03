@@ -1,4 +1,4 @@
-package ute.apdist.bddjpa;
+package ute.apdist.bddserver;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

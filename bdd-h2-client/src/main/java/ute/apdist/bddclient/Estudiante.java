@@ -1,11 +1,5 @@
-package ute.apdist.bddjpa;
+package ute.apdist.bddclient;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Estudiante {
 	
 	Estudiante() {}
@@ -14,9 +8,7 @@ public class Estudiante {
 		this.nombre = nombre;
 		this.cedula = cedula;
 	}
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private Long id;
 	private String nombre;
 	private String cedula;

@@ -1,4 +1,4 @@
-package ute.apdist.bddjpa;
+package ute.apdist.bddserver;
 
 import java.sql.SQLException;
 
