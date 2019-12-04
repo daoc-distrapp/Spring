@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
 public class BddJpaApplication implements CommandLineRunner {
+	private final Random rnd = new Random();
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
@@ -23,18 +24,20 @@ public class BddJpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("INIT");
-		
-		Long id = new Random().nextLong();
-		String insertSql = String.format("insert into estudiante values(%d,'client','1234')", id);
+
+		String insertSql = String.format("insert into estudiante values(%d,'client','1234')", rnd.nextLong());
 		jdbcTemplate.execute(insertSql);
-		
-		String selectSql = "select * from estudiante";
-        List<Estudiante> estudiantes = 
-        	jdbcTemplate.query(
-        		selectSql,
-                new BeanPropertyRowMapper<Estudiante>(Estudiante.class));
+
+        List<Estudiante> estudiantes = getEstudiantes("select * from estudiante");
 		System.out.println(estudiantes);
 
 		System.out.println("END");
 	}
+	
+	private List<Estudiante> getEstudiantes(String sql) {
+		return jdbcTemplate.query(
+					sql,
+					new BeanPropertyRowMapper<Estudiante>(Estudiante.class));
+	}
+
 }

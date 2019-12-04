@@ -34,6 +34,6 @@ public class Estudiante {
 	
 	@Override
 	public String toString() {
-		return String.format("%d / %s / %s", getId(), getCedula(), getNombre());
+		return String.format("Estudiante{id:%d; nombre:%s; cédula:%s}", getId(), getCedula(), getNombre());
 	}
 }
