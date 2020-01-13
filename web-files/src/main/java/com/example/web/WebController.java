@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class WebController {
-	public static final String FILES_PATH = "C:\\Users\\dordonez\\Downloads";
+	public static final String FILES_PATH = "C:\\Users\\ordon\\Downloads";
 	
 	@PostMapping("/uploadOneFile")
 	@ResponseBody
