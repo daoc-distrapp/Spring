@@ -5,8 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import javax.annotation.Resource;
-
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -28,7 +26,7 @@ public class WebController {
 	public  String uploadOneFile(@RequestParam("f") MultipartFile file) throws IOException {
 		Files.copy(
 			file.getInputStream()
-			, Paths.get(FILES_PATH, file.getOriginalFilename()));
+			, Paths.get(FILES_PATH, getFileName(file.getOriginalFilename())));
 		return "Recibido: " + file.getOriginalFilename() + " : " + file.getSize();
 	}
 
@@ -39,7 +37,7 @@ public class WebController {
 		for(MultipartFile f : files) {
 			Files.copy(
 				f.getInputStream()
-				, Paths.get(FILES_PATH, f.getOriginalFilename()));
+				, Paths.get(FILES_PATH, getFileName(f.getOriginalFilename())));
 			response += f.getOriginalFilename() + " : " + f.getSize() + " / ";
 		}
 		return response;
@@ -69,4 +67,8 @@ public class WebController {
 
 	}
 	
+	private String getFileName(String fileName) {
+		Path path = Paths.get(fileName);
+		return path.getFileName().toString();
+	}
 }
