@@ -27,5 +27,5 @@ public class BddJpaApplication implements CommandLineRunner {
 		repository.findByNombreContaining("n").forEach(e -> System.out.println(e));
 		System.out.println("---");
 		repository.findByNombreContaining("D").forEach(e -> System.out.println(e));
-}
+	}
 }

@@ -6,19 +6,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WebController {
 
-	@GetMapping("/saludo")
+	@RequestMapping("/saludo")
 	public ResponseEntity<String> hola() {
 		return new ResponseEntity<String>("Hola Mundo !!!", HttpStatus.OK);
 	}
 
 	@GetMapping("/saludoN")
-	public ResponseEntity<String> holaNombre(@RequestParam(name = "n") String nombre) {
-		return new ResponseEntity<String>("Hola " + nombre, HttpStatus.OK);
+	public ResponseEntity<String> holaNombre(@RequestParam(name = "n") String nombre, @RequestParam(name = "ape") String apellido) {
+		String str = nombre.toUpperCase() + apellido.toUpperCase();
+		return new ResponseEntity<String>("Hola " + str, HttpStatus.OK);
 	}
 	
 	@PostMapping("/saludoC")
