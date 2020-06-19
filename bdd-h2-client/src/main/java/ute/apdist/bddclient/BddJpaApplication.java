@@ -25,7 +25,7 @@ public class BddJpaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		System.out.println("INIT");
 
-		String insertSql = String.format("insert into estudiante values(%d,'client','1234')", rnd.nextLong());
+		String insertSql = String.format("insert into estudiante(id, nombre, cedula) values(%d,'client2','1234555')", rnd.nextLong());
 		jdbcTemplate.execute(insertSql);
 
         List<Estudiante> estudiantes = getEstudiantes("select * from estudiante");

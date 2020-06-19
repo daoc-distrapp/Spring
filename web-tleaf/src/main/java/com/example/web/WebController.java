@@ -15,7 +15,7 @@ public class WebController {
 	}
 
 	@GetMapping("/saludoN")
-	public String holaNombre(Model model, @RequestParam(name = "n") String nombre) {
+	public String holaNombre(Model model, @RequestParam(name = "n") String nombre) {		
 		model.addAttribute("name", nombre);
 		return "saludoN";
 	}

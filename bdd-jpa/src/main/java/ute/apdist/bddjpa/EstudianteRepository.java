@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 //https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 public interface EstudianteRepository extends CrudRepository<Estudiante, Long> {
 	List<Estudiante> findByNombreContaining(String nombre);
+	List<Estudiante> findByCedulaContaining(String nombre);
 }
