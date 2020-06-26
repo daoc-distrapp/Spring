@@ -33,8 +33,11 @@ public class RestControll {
 	
 	@PostMapping("/create")
 	public ResponseEntity<?> postDato(@RequestBody UnDato dato) {
-		repository.save(dato);
-		return ResponseEntity.ok().build();
+		if(!repository.existsById(dato.getNumero())) {
+			repository.save(dato);
+			return ResponseEntity.ok().build();
+		}
+		return ResponseEntity.badRequest().build();
 	}
 
 	@PutMapping("/update")
